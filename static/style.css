@@ -1,0 +1,379 @@
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #fbf9f4;
+    color: #004057;
+    background: url('./images/pic.jpg')  fixed;
+    background-position: center;
+    font-family: Ubuntu, Arial, sans-serif;
+}
+
+.header {
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.header:before {
+    display: block;
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    height: 10px;
+    width: 100%;
+}
+
+
+hr.fancy-line {
+    border: 0;
+    height: 1px;
+    position: relative;
+    margin: 0.5em 0; /* Keep other elements away from pseudo elements*/
+}
+
+hr.fancy-line:before {
+    content:'';
+    height: 10px;   /* half the height of :after */
+    background-color: #fff;
+}
+
+hr.fancy-line:after {
+    top: 0em;
+    height: 5px;
+    border-bottom: 1px solid #fff;
+    background-color: #fff;
+}
+
+hr.fancy-line:after, hr.fancy-line:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+}
+
+hr.fancy-line, hr.fancy-line:before {
+    background: -moz-radial-gradient(center, ellipse cover, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0) 75%);
+    background: -webkit-gradient(radial, center center, 0px, center center, 75%, color-stop(0%,rgba(0,0,0,0.1)), color-stop(75%,rgba(0,0,0,0)));
+    background: -webkit-radial-gradient(center, ellipse cover, rgba(0,0,0,0.1) 0%,rgba(0,0,0,0) 75%);
+    background: -o-radial-gradient(center, ellipse cover, rgba(0,0,0,0.1) 0%,rgba(0,0,0,0) 75%);
+    background: -ms-radial-gradient(center, ellipse cover, rgba(0,0,0,0.1) 0%,rgba(0,0,0,0) 75%);
+    background: radial-gradient(ellipse at center, rgba(0,0,0,0.1) 0%,rgba(0,0,0,0) 75%);
+}
+
+
+.container {
+    width: 960px;
+    margin: 0 auto;
+}
+
+
+.thumbnail {
+    width: 100%;
+    height: 200px;
+    line-height: 200px;
+    overflow: hidden;
+    text-align: center;
+}
+
+.thumbnail.thumbnail-default {
+    background-color: rgba(255,255,255,0.6);
+}
+
+.thumbnail img {
+    max-width: 100%;
+    vertical-align: middle;
+    margin: -100%;
+    position: relative;
+}
+
+.title, .title a {
+    color: #ff5e73;
+    text-decoration: none;
+}
+
+.site-title {
+    text-align: left;
+    font-family: 'Lemon', cursive;
+    margin:7px 0px 0px 40px;
+}
+.site-title a {
+    color: rgba(255,255,255, 0.8);
+    color: #60482a;
+    text-decoration: none;
+}
+
+/*
+  Post
+*/
+
+.post-wrapper {
+    width: 50%;
+    float: left;
+    padding: 0 20px;
+}
+
+.post {
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 15px;
+    margin: 0 auto 40px;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.post:after {
+    width: 100%;
+    height: 7px;
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background: linear-gradient(rgba(105, 106, 97,0), rgba(105, 106, 97,.1));
+    border-radius: 0 0 15px 15px;
+}
+
+.post-heading {
+    padding: 8px 15px;
+    position: relative;
+    color: #ff5e73;
+    height: 100px;
+}
+
+.post-content {
+    padding: 30px 30px 40px 30px;
+    height: 150px;
+    overflow: hidden;
+    position: relative;
+}
+
+.read-more-block:before {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 50px;
+    left: 0;
+    bottom: 0;
+    content: "";
+    background: -moz-linear-gradient(top,  rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0)), color-stop(100%,rgba(255,255,255,1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
+}
+
+.post-footer {
+    text-align: center;
+    background-color: #fff;
+    border-radius: 0 0 15px 15px;
+}
+
+.post .read-more {
+    background-color:transparent;
+    display: inline-block;
+    color: #ccc;
+    padding: 10px 15px;
+    border: none;
+    text-decoration: none;
+    transition: all 0.2s ease-out;
+    width: 100%;
+    border-radius: 0 0 15px 15px;
+}
+
+.post .read-more:hover ,.enter:hover{
+    background-color: #04cac4;
+    border-color: #04cac4;
+    color: #fff;
+    transition: all 0.2s ease-in;
+    border-radius: 0 0 15px 15px;
+}
+
+.post .date {
+    color: #fff;
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    padding: 5px 10px;
+    background-color: #04cac4;
+    font-size: 16px;
+}
+
+.post .title {
+    margin-top: 15px;
+}
+
+
+.post.post-detail {
+    max-width: 800px;
+}
+
+
+.post-detail .map {
+    margin-top: 10px;
+    width: 100%;
+    height: 150px;
+}
+
+.post-detail .location {
+    padding-left: 15px;
+    color: #7f7274;
+}
+
+.post-detail .photo {
+    display: block;
+    max-width: 100%;
+    margin: 10px auto;
+}
+
+.post-detail .post-content {
+    height: auto;
+}
+
+.enter-block .enter{
+    background-position:center;
+    text-align: center;
+}
+
+.container1 {
+    width: 700px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.form-content {
+    padding: 0px 15px 20px 15px;
+    position: relative;
+}
+
+.form-wrapper {
+    width: 100%;
+    padding: 0 20px;
+}
+
+.form {
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 15px;
+    margin: 0 auto 40px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
+    text-align:center;
+}
+
+.form:after {
+    width: 100%;
+    height: 7px;
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    border-radius: 0 0 15px 15px;
+}
+
+label {
+    display:block;
+    float: left;
+    font-weight: bold;
+}
+
+.form-footer{
+    margin: 0 auto;
+}
+
+.enter{
+    background-color:rgba(255,255,255,0.3);
+    display: inline-block;
+    color: #777;
+    padding: 15px 30px;
+    text-decoration: none;
+    transition: all 0.2s ease-out;
+    cursor: pointer;
+    width: 100%;
+    border-radius:0px 0px 15px 15px;
+    border: none;
+}
+
+.container2 {
+    width: 460px;
+    margin: 0 auto;
+}
+
+/*
+  Navbar
+*/
+
+ul.nav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+.nav-li {
+    float: right;
+}
+
+.nav-li a {
+    display: block;
+    color: #777;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.nav-li a:hover {
+    background-color: #04cac4;
+    border-color: #04cac4;
+    color: #fff;
+    transition: all 0.2s ease-in;
+}
+
+/**************Register**************/
+
+input[type=text], input[type=password], input[type=url], textarea {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.helptext{
+    display: none;
+}
+
+ul.errorlist{
+    margin-left: 300px;
+}
+
+.welcome-enter{
+    display: block;
+    color: #777;
+    text-align: center;
+    padding: 10px 16px;
+    text-decoration: none;
+    border-radius: 0px 0px 15px 15px;
+    transition: all 0.2s ease-out;
+}
+
+.welcome-enter:hover {
+    background-color: #04cac4;
+    border-color: #04cac4;
+    color: #fff;
+    transition: all 0.2s ease-in;
+}
+
+.footer {
+    text-align: center;
+    background-color: transparent;
+    padding: 10px 10px 10px;
+}
+
