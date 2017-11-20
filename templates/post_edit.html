@@ -1,0 +1,22 @@
+
+{% extends 'layout.html' %}
+{% block content %}
+<div class="container2">
+    <div class="form-wrapper">
+        <div class="form">
+            <form action="." method="POST">{% csrf_token %}
+                <div class="post-heading">
+                    <h1>Edit your post</h1>
+                </div>
+                <div class="form-content">
+                    {{ form.as_p }}
+                </div>
+                <div class="form-footer">
+                    <input class="enter" type="submit" value="Edit"/>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

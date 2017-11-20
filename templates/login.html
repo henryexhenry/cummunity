@@ -1,0 +1,27 @@
+{% extends 'layout.html' %}
+{% block content %}
+<div class="container2">
+    <div class="form-wrapper">
+        <div class="form">
+            <div class="post-heading">
+                <h1>Login</h1>
+            </div>
+                <form action="" method="POST">{% csrf_token %}
+                    <div class="form-content">
+                         <label for="username">Username:</label>
+                         <input type="text" name="username" value="" id="username"> <br />
+                         <label for="password">Password:</label>
+                         <input type="password" name="password" value="" id="password"> <br />
+                    </div>
+                    {% if error %}
+                    <p style="color: red">{{ error }}</p>
+                    {% endif %}
+                    <div class="form-footer">
+                        <input class="enter" type="submit" value="Submit"/>
+                    </div>
+                </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

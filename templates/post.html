@@ -1,0 +1,31 @@
+<!-- templates/post.html -->
+{% extends "layout.html" %}
+{% block content %}
+    <div class="container post post-detail">
+        <div class="post-heading">
+            <h1 class="title">{{ post.title }}</h1>
+            <div class="author">{{ post.author }}</div>
+            <div class="date">{{ post.created_at|date:'Y / m / d' }}</div>
+        </div>
+        <div class="location">
+            <i class="fa fa-map-marker"></i>
+            <span id="location-content">{{ post.location }}</span>
+        </div>
+        <div id="map-canvas" class="map"></div>
+        <div class="post-content" style="background-color:rgba(255,255,255,0.6); margin:20px; border-radius:15px;">
+            {{ post.content }}
+        </div>
+        <hr class="fancy-line">
+        <img class="photo" src="{{ post.photo }}" alt="Cover photo for {{ post.title }}">
+        {% if user == post.author %}
+        <div class="form-footer">
+            <a class="enter" style="text-align: center " href="{% url 'post_edit' pk=post.pk %}">Edit</a>
+        </div>
+        {% else %}
+        <div class="footer"></div>
+        {% endif %}
+    </div>
+    <script src="//maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&sensor=false"></script>
+    {% load static %}
+    <script src="{% static 'map.js' %}"></script>
+{% endblock %}

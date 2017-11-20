@@ -1,0 +1,29 @@
+{% extends 'layout.html' %}
+{% block content %}
+<div class="container2">
+    <div class="form-wrapper">
+        <div class="form">
+            <form action="" method="POST">{% csrf_token %}
+                <div class="post-heading">
+                    <h1>Register</h1>
+                </div>
+                <div class="form-content">
+                    {% for field in form %}
+                    <p>
+                        {{ field.label_tag }}<br>
+                        {{ field }}
+                        {% for error in field.errors %}
+                        <p style="color: red">{{ error }}</p>
+                        {% endfor %}
+                    </p>
+                    {% endfor %}
+                </div>
+                <div class="form-footer">
+                    <input class="enter" type="submit" value="Submit"/>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
